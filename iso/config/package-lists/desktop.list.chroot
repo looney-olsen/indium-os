@@ -9,3 +9,5 @@ plasma-discover-backend-flatpak
 appmenu-gtk-module-common
 python3-gi
 gir1.2-gtk-4.0
+live-boot
+live-config-systemd
