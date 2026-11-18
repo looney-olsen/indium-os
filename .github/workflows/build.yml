@@ -9,15 +9,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      
+      - name: Free up disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf "/usr/local/share/boost"
+          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
+
       - name: Install Dependencies
+        env:
+          DEBIAN_FRONTEND: noninteractive
         run: |
           sudo apt-get update
           sudo apt-get install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common debian-archive-keyring
+          
       - name: Build ISO (AMD64)
         run: |
           cd iso
           sudo ./auto/config
           sudo lb build
+          
       - name: Upload AMD64 ISO
         uses: actions/upload-artifact@v4
         with:
