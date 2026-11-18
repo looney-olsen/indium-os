@@ -11,4 +11,10 @@ lb config noauto \
     --iso-application "Indium OS" \
     --iso-volume "INDIUM_OS" \
     --linux-flavours amd64 \
+    --mirror-bootstrap "http://deb.debian.org/debian/" \
+    --mirror-chroot "http://deb.debian.org/debian/" \
+    --mirror-binary "http://deb.debian.org/debian/" \
+    --parent-mirror-bootstrap "http://deb.debian.org/debian/" \
+    --parent-mirror-chroot "http://deb.debian.org/debian/" \
+    --parent-mirror-binary "http://deb.debian.org/debian/" \
     "${@}"
