@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+
+echo "Installing Indium custom packages..."
+dpkg -i /tmp/indium-packages/*.deb
