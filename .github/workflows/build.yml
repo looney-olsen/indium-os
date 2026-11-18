@@ -26,13 +26,13 @@ jobs:
 
       - name: Build Custom Packages
         run: |
-          mkdir -p iso/config/includes.chroot/tmp/indium-packages/
+          mkdir -p iso/config/includes.chroot/tmp/indium-packages
           for dir in packages/*/; do
             pkg_name=$(basename "${dir%/}")
-            dpkg-deb --build --root-owner-group "$dir" "iso/config/packages.chroot/${pkg_name}_1.0.0_all.deb"
+            dpkg-deb --build --root-owner-group "$dir" "iso/config/includes.chroot/tmp/indium-packages/${pkg_name}_1.0.0_all.deb"
           done
           echo "--- Generated Packages ---"
-          ls -la iso/config/packages.chroot/
+          ls -la iso/config/includes.chroot/tmp/indium-packages/
 
       - name: Build ISO (AMD64)
         run: |
