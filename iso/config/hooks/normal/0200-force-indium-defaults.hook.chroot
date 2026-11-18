@@ -1,0 +1,26 @@
+#!/bin/sh
+set -e
+
+echo "Forcing Indium defaults on the Live user..."
+# Copy our KDE settings directly into the user's home directory
+mkdir -p /home/user/.config/autostart
+cp /etc/skel/.config/kdeglobals /home/user/.config/kdeglobals
+cp /etc/skel/.config/autostart/*.desktop /home/user/.config/autostart/
+
+# Set the wallpaper using KDE's native config
+mkdir -p /home/user/.config
+cat << EOF > /home/user/.config/plasma-org.kde.plasma.desktop-appletsrc
+[Containments][1]
+activityId=
+formfactor=0
+immutability=1
+lastScreen=0
+location=0
+plugin=org.kde.plasma.folder
+wallpaperplugin=org.kde.image
+[Containments][1][Wallpaper][org.kde.image][General]
+Image=file:///usr/share/backgrounds/indium/indium-dark.png
+EOF
+
+# Fix permissions so the user owns the files
+chown -R user:user /home/user/.config
