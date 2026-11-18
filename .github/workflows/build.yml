@@ -23,6 +23,14 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common debian-archive-keyring
+
+      - name: Build Custom Packages
+        run: |
+          mkdir -p iso/config/packages.chroot
+          for dir in packages/*/; do
+            dpkg-deb --build --root-owner-group "$dir"
+            mv "${dir%/}.deb" iso/config/packages.chroot/
+          done
           
       - name: Build ISO (AMD64)
         run: |
