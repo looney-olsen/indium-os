@@ -1,0 +1,5 @@
+# Skip GPG verification for debootstrap
+DEBOOTSTRAP_OPTIONS="--no-check-gpg"
+
+# Also disable APT secure mode for the bootstrap phase
+LB_APT_SECURE="false"
