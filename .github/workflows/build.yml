@@ -7,22 +7,16 @@ on:
 jobs:
   build-amd64:
     runs-on: ubuntu-latest
+    container: debian:trixie
     steps:
       - uses: actions/checkout@v4
       
-      - name: Free up disk space
-        run: |
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /opt/ghc
-          sudo rm -rf "/usr/local/share/boost"
-          sudo rm -rf "$AGENT_TOOLSDIRECTORY"
-
-      - name: Install Dependencies
+      - name: Install Dependencies in Debian Container
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          sudo apt-get update
-          sudo apt-get install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common debian-archive-keyring gnupg gpgv
+          apt-get update
+          apt-get install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common debian-archive-keyring gnupg gpgv
 
       - name: Build Custom Packages
         run: |
@@ -38,8 +32,8 @@ jobs:
         run: |
           cd iso
           chmod +x config/hooks/normal/*.hook.chroot
-          sudo ./auto/config
-          sudo env "PATH=$PATH" lb build
+          ./auto/config
+          lb build
           
       - name: Upload AMD64 ISO
         uses: actions/upload-artifact@v4
