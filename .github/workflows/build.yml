@@ -28,10 +28,12 @@ jobs:
         run: |
           mkdir -p iso/config/packages.chroot
           for dir in packages/*/; do
-            dpkg-deb --build --root-owner-group "$dir"
-            mv "${dir%/}.deb" iso/config/packages.chroot/
+            pkg_name=$(basename "${dir%/}")
+            dpkg-deb --build --root-owner-group "$dir" "iso/config/packages.chroot/${pkg_name}_1.0.0_all.deb"
           done
-          
+          echo "--- Generated Packages ---"
+          ls -la iso/config/packages.chroot/
+
       - name: Build ISO (AMD64)
         run: |
           cd iso
