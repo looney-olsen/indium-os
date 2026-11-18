@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Indium Welcome
+Exec=indium-welcome
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
