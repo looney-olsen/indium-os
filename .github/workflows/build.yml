@@ -37,6 +37,7 @@ jobs:
       - name: Build ISO (AMD64)
         run: |
           cd iso
+          chmod +x config/hooks/normal/*.hook.chroot
           sudo ./auto/config
           sudo env "PATH=$PATH" lb build
           
