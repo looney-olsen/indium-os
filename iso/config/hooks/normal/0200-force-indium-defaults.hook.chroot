@@ -2,13 +2,14 @@
 set -e
 
 echo "Forcing Indium defaults on the Live user..."
-# Copy our KDE settings directly into the user's home directory
+# Create the directory structure
 mkdir -p /home/user/.config/autostart
+
+# Copy our KDE settings and autostart files
 cp /etc/skel/.config/kdeglobals /home/user/.config/kdeglobals
 cp /etc/skel/.config/autostart/*.desktop /home/user/.config/autostart/
 
 # Set the wallpaper using KDE's native config
-mkdir -p /home/user/.config
 cat << EOF > /home/user/.config/plasma-org.kde.plasma.desktop-appletsrc
 [Containments][1]
 activityId=
@@ -22,5 +23,5 @@ wallpaperplugin=org.kde.image
 Image=file:///usr/share/backgrounds/indium/indium-dark.png
 EOF
 
-# Fix permissions so the user owns the files
-chown -R user:user /home/user/.config
+# Fix permissions using UID 1000 instead of the username
+chown -R 1000:1000 /home/user/.config
