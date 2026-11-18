@@ -1,0 +1,8 @@
+Package: indium-artwork
+Version: 1.0.0
+Section: graphics
+Priority: optional
+Architecture: all
+Maintainer: Indium OS Team <you@example.com>
+Description: Wallpapers and artwork for Indium OS
+ Includes the Indium OS logo and custom wallpapers.

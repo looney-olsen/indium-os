@@ -1,0 +1,17 @@
+[General]
+ColorScheme=IndiumDark
+Name=IndiumDark
+TerminalApplication=konsole
+
+[Icons]
+Theme=Indium-Mac-Icons
+
+[KDE]
+AnimationDurationFactor=1
+LookAndFeelPackage=org.kde.breezedark.desktop
+SingleClick=false
+MenuBar=Disabled
+
+[Windows]
+TitlebarButtons=CHM|I
+TitlebarButtonSize=1

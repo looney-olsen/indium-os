@@ -1,0 +1,8 @@
+background_image = Image("background.png");
+background_sprite = Sprite(background_image);
+background_sprite.SetX(Window.GetWidth() / 2 - background_image.GetWidth() / 2);
+background_sprite.SetY(Window.GetHeight() / 2 - background_image.GetHeight() / 2);
+
+fun draw_spinner() {
+    progress = Plymouth.GetProgress();
+}

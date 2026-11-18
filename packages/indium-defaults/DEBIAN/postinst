@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+# Force the Mac-style Global Menu and Dock
+mkdir -p /etc/skel/.config
+cat << EOF > /etc/skel/.config/plasma-org.kde.plasma.desktop-appletsrc
+[Containments][1][Applets][2]
+plugin=org.kde.plasma.appmenu
+
+[Containments][1][Applets][3]
+plugin=org.kde.plasma.kickoff
+EOF
+
+exit 0

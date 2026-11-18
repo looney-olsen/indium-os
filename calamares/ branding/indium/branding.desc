@@ -1,0 +1,26 @@
+---
+componentName: indium
+
+strings:
+    productName:         "Indium OS"
+    shortProductName:    "Indium"
+    version:             "1.0"
+    shortVersion:        "1.0"
+    versionedName:       "Indium OS 1.0 (Trixie)"
+    shortVersionedName:  "Indium 1.0"
+    bootloaderEntryName: "Indium"
+    productUrl:          "https://indium-os.github.io"
+    supportUrl:          "https://github.com/indium-os/indium-os/issues"
+
+images:
+    productLogo:         "logo.png"
+    productIcon:         "icon.png"
+    productWelcome:      "welcome.png"
+
+slideshow:               "show.qml"
+
+style:
+    sidebarBackground:   "#1A1A24"
+    sidebarText:         "#FFFFFF"
+    sidebarTextSelect:   "#D100FF"
+    sidebarTextHighlight:"#00A3FF"

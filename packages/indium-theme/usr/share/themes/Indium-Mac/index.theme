@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Indium-Mac
+Comment=Mac-inspired theme for Indium OS
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Indium-Mac
+MetacityTheme=Indium-Mac
+IconTheme=Indium-Mac-Icons
+CursorTheme=Adwaita
+ButtonLayout=close,minimize,maximize:

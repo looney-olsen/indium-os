@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+mkdir -p /usr/share/applications
+cat << EOF > /usr/share/applications/indium-welcome.desktop
+[Desktop Entry]
+Type=Application
+Name=Welcome to Indium
+Comment=Indium OS Welcome Screen
+Exec=indium-welcome
+Icon=system-software-install
+Terminal=false
+Categories=System;
+EOF
+
+exit 0

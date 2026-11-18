@@ -1,0 +1,8 @@
+# Ignore live-build temporary files and ISOs
+iso/chroot/
+iso/binary/
+iso/cache/
+iso/*.iso
+iso/*.hybrid
+iso/live-image-*
+iso/.build/

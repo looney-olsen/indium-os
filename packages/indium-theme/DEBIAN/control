@@ -1,0 +1,8 @@
+Package: indium-theme
+Version: 1.0.0
+Section: x11
+Priority: optional
+Architecture: all
+Maintainer: Indium OS Team <you@example.com>
+Description: Indium OS Mac-like Theme
+ Custom GTK and Kvantum themes for Indium OS.

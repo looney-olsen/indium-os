@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Indium OS
+Description=Indium OS Boot Splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/indium
+ScriptFile=/usr/share/plymouth/themes/indium/indium.script

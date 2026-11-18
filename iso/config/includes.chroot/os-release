@@ -1,0 +1,9 @@
+PRETTY_NAME="Indium OS 1.0 (Trixie)"
+NAME="Indium OS"
+VERSION_ID="1.0"
+VERSION="1.0 (Trixie)"
+ID=indium
+ID_LIKE=debian
+HOME_URL="https://indium-os.github.io"
+SUPPORT_URL="https://github.com/indium-os/indium-os/issues"
+BUG_REPORT_URL="https://github.com/indium-os/indium-os/issues"

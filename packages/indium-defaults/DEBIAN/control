@@ -1,0 +1,8 @@
+Package: indium-defaults
+Version: 1.0.0
+Section: x11
+Priority: optional
+Architecture: all
+Maintainer: Indium OS Team <you@example.com>
+Description: Default settings for Indium OS
+ Provides Mac-like KDE defaults and configurations.

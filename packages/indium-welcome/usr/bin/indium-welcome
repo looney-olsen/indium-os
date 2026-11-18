@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import gi
+gi.require_version('Gtk', '4.0')
+from gi.repository import Gtk, Gdk
+
+class WelcomeApp(Gtk.Application):
+    def __init__(self):
+        super().__init__(application_id="org.indium.os.welcome")
+
+    def do_activate(self):
+        win = Gtk.ApplicationWindow(application=self)
+        win.set_title("Welcome to Indium OS")
+        win.set_default_size(600, 400)
+        
+        label = Gtk.Label(label="Welcome to Indium OS\n\nBuild • Use • Innovate\n\nYour system is ready.")
+        label.set_margin_top(50)
+        win.set_child(label)
+        win.present()
+
+if __name__ == "__main__":
+    app = WelcomeApp()
+    app.run()

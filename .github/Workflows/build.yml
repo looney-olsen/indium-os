@@ -1,0 +1,44 @@
+name: Build Indium OS ISO
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-amd64:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y live-build debootstrap squashfs-tools xorriso isolinux syslinux-common
+      - name: Build ISO (AMD64)
+        run: |
+          cd iso
+          sudo ./auto/config
+          sudo lb build
+      - name: Upload AMD64 ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: indium-os-amd64
+          path: iso/live-image-amd64.hybrid.iso
+
+  build-arm64:
+    runs-on: ubuntu-latest-arm64
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y live-build debootstrap squashfs-tools xorriso
+      - name: Build ISO (ARM64)
+        run: |
+          cd iso
+          sudo ./auto/config
+          sudo lb build
+      - name: Upload ARM64 ISO
+        uses: actions/upload-artifact@v4
+        with:
+          name: indium-os-arm64
+          path: iso/live-image-arm64.hybrid.iso
